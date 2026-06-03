@@ -46,3 +46,6 @@ Sur le serveur 1 :
 
 Et sur le 2 juste après :
 {"requests":12,"uptime":1015,"instance":"Host-002"}
+
+Solution possible pour que les compteurs se suivent : Redis.
+On fait en sorte tous les process pointent vers le même redis
