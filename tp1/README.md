@@ -49,3 +49,19 @@ Et sur le 2 juste après :
 
 Solution possible pour que les compteurs se suivent : Redis.
 On fait en sorte tous les process pointent vers le même redis
+
+Docker :
+Mono-stage :
+On fait le Dockerfile.single :
+on utilise l'utilisateur node qui est déjà présent dans l'image officielle.
+
+On build de la manière suivante :
+docker build -t wik-dps-tp02:single -f Dockerfile.single .
+
+Puis, on regarde les vulns avec cette commande :
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
+  aquasec/trivy:latest image wik-dps-tp02:single
+
+On peut ensuite lancer cette commande pour lancer l'application :
+ docker run --rm -p 8000:8000 wik-dps-tp02:single
+ 
