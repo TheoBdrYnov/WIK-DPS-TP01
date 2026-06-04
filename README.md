@@ -64,4 +64,9 @@ docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
 
 On peut ensuite lancer cette commande pour lancer l'application :
  docker run --rm -p 8000:8000 wik-dps-tp02:single
+
+
+ TP 3 :
+ On met 4 réplicas puis après avoir fait la commande "docker compose up --build", on peut tester avec la commadne suivante :
+ for i in $(seq 1 12); do curl -s http://localhost:8080/ping > /dev/null; done
  
